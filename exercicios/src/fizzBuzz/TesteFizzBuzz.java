@@ -10,10 +10,10 @@ public class TesteFizzBuzz {
 		
 		n = scanf.nextInt();
 		while(i<=n) {
-			if(i % 3 == 0 && i%5 != 0) {
+			if(i % 3 == 0 && i % 5 != 0) {
 				System.out.print("Fizz ");
 			}
-			else if(i % 5 == 0 && i%3 != 0) {
+			else if(i % 5 == 0 && i % 3 != 0) {
 				System.out.print("Buzz ");
 			}
 			else if(i % 3 == 0 && i % 5 == 0) {
@@ -23,6 +23,7 @@ public class TesteFizzBuzz {
 				System.out.print(i + " ");
 			i++;
 		}
+		scanf.close();
 	}
 
 }
