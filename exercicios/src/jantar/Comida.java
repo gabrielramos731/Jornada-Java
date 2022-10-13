@@ -2,11 +2,11 @@ package jantar;
 
 public class Comida {
 
-	String comida;
+	String nome;
 	double peso;
 	
 	Comida(String comida, double peso){
-		this.comida = comida;
+		this.nome = comida;
 		this.peso = peso;
 	}
 }
