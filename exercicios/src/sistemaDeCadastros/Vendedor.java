@@ -1,5 +1,6 @@
 package sistemaDeCadastros;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Vendedor {
@@ -28,5 +29,12 @@ public class Vendedor {
 	public String toString() {
 		return "\nNome: " + nome + "\nCPF: " + cpf + "\nData de nascimento: " + dataDeNascimento + 
 				"\nSalario base: " + salarioBase + "\nToatal vendido: " + totalVendido + "\n";
+	}
+	
+	public static void calcularComissao(List<Vendedor> cadastroVendedores) {
+		for(Vendedor individuo : cadastroVendedores) {
+			System.out.printf("\n%s: R$%.2f\n", individuo.nome, individuo.totalVendido * 0.03);
+		}
+		System.out.println("\n");
 	}
 }

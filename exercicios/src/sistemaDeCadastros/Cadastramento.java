@@ -37,6 +37,10 @@ public class Cadastramento {
 				for(Vendedor individuo : cadastroVendedores)
 					System.out.println(individuo.toString());
 				break;
+			case 3:
+				Vendedor.calcularComissao(cadastroVendedores);
+				break;
+				
 			case 0:
 				System.out.println("\nPrograma encerrado!");
 				break;
