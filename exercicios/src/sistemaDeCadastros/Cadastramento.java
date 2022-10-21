@@ -39,11 +39,16 @@ public class Cadastramento {
 				break;
 			case 3:
 				Vendedor.calcularComissao(cadastroVendedores);
+				System.out.println(cadastroVendedores);
 				break;
+			case 4:
 				
-			case 0:
-				System.out.println("\nPrograma encerrado!");
 				break;
+			case 0:
+				System.out.println("\nPrograma encerrado!\n");
+				break;
+			default:
+				System.out.println("\nOpção inválida\n");
 			}
 		} while(opcao != 0);
 	}
