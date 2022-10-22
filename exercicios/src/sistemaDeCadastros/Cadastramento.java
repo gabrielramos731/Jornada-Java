@@ -9,7 +9,8 @@ public class Cadastramento {
 	
 	public static void main(String[] args) {
 		
-		int opcao, i, quantTotal = 0; int quantVendedores = 0;
+		int opcao, i; int quantVendedores = 0, indexProcurado;
+		String nomeBuscado;
 		Scanner scanf = new Scanner(System.in);
 		
 		List<Vendedor> cadastroVendedores = new ArrayList<>();
@@ -35,14 +36,16 @@ public class Cadastramento {
 				break;
 			case 2:
 				for(Vendedor individuo : cadastroVendedores)
-					System.out.println(individuo.toString());
+					System.out.println(individuo);
 				break;
 			case 3:
 				Vendedor.calcularComissao(cadastroVendedores);
-				System.out.println(cadastroVendedores);
 				break;
 			case 4:
-				
+				System.out.println("Nome do vendedor: ");
+				nomeBuscado = scanf.next();
+				indexProcurado = Vendedor.encontrarVendedor(cadastroVendedores, nomeBuscado);
+				System.out.println(indexProcurado);
 				break;
 			case 0:
 				System.out.println("\nPrograma encerrado!\n");
