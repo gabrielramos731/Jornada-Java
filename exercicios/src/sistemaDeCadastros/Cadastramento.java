@@ -1,7 +1,6 @@
 package sistemaDeCadastros;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -11,8 +10,8 @@ public class Cadastramento {
 		
 		int opcao, i; int quantVendedores = 0, indexProcurado;
 		String nomeBuscado;
-		Scanner scanf = new Scanner(System.in);
 		
+		Scanner scanf = new Scanner(System.in);
 		List<Vendedor> cadastroVendedores = new ArrayList<>();
 		
 		do {
@@ -36,17 +35,17 @@ public class Cadastramento {
 				break;
 			case 2:
 				for(Vendedor individuo : cadastroVendedores)
-					System.out.println(individuo.toString());
+					System.out.println(individuo.toString() + "\n");
 				break;
 			case 3:
 				Vendedor.calcularComissao(cadastroVendedores);
 				break;
-			case 4:
+			case 4:  //nao mostra os repetidos
 				System.out.println("Nome do vendedor: ");
 				nomeBuscado = scanf.next();
 				indexProcurado = Vendedor.encontrarVendedor(cadastroVendedores, nomeBuscado);
 				if(indexProcurado == -1)
-					System.out.println("Vendedor não cadastrado");
+					System.out.println("Vendedor não cadastrado\n");
 				else
 					System.out.println(cadastroVendedores.get(indexProcurado) + "\n");					
 				break;
@@ -57,5 +56,6 @@ public class Cadastramento {
 				System.out.println("\nOpção inválida\n");
 			}
 		} while(opcao != 0);
+		scanf.close();
 	}
 }
