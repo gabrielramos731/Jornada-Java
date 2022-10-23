@@ -13,7 +13,7 @@ public class Vendedor {
 	double totalVendido;
 	
 	Scanner scanf = new Scanner(System.in);
-	
+
 	void cadastrar() {
 		System.out.println("Nome: ");
 		this.nome = scanf.next();
@@ -25,6 +25,11 @@ public class Vendedor {
 		this.salarioBase = scanf.nextDouble();
 		System.out.println("Total vendido: ");
 		this.totalVendido = scanf.nextDouble();
+	}
+	
+	public String toString() {
+		return "Vendedor [nome=" + nome + ", cpf=" + cpf + ", dataDeNascimento=" + dataDeNascimento + ", salarioBase="
+				+ salarioBase + ", totalVendido=" + totalVendido + "]";
 	}
 	
 	public static void calcularComissao(List<Vendedor> cadastroVendedores) {
@@ -52,10 +57,20 @@ public class Vendedor {
 				&& Double.doubleToLongBits(totalVendido) == Double.doubleToLongBits(other.totalVendido);
 	}
 
+	public boolean equalsName(Object obj) {
+		Vendedor outro = (Vendedor)obj;
+		if(this.nome.equals(outro.nome))
+			return true;
+		else
+			return false;
+	}
+	
 	public static int encontrarVendedor(List<Vendedor> cadastroVendedores, String nomeBuscado) {
-		for(Object individuo : cadastroVendedores) {
-			if(individuo.equals(new Vendedor().nome == nomeBuscado));
-			return cadastroVendedores.indexOf(individuo);
+		Vendedor obj = new Vendedor();
+		obj.nome = nomeBuscado;
+		for(Vendedor individuo : cadastroVendedores) {
+			if(individuo.equalsName(obj))
+				return cadastroVendedores.indexOf(individuo);
 		}
 		return -1;
 	}

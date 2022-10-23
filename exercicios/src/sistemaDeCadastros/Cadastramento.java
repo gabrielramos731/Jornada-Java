@@ -36,7 +36,7 @@ public class Cadastramento {
 				break;
 			case 2:
 				for(Vendedor individuo : cadastroVendedores)
-					System.out.println(individuo);
+					System.out.println(individuo.toString());
 				break;
 			case 3:
 				Vendedor.calcularComissao(cadastroVendedores);
@@ -45,7 +45,10 @@ public class Cadastramento {
 				System.out.println("Nome do vendedor: ");
 				nomeBuscado = scanf.next();
 				indexProcurado = Vendedor.encontrarVendedor(cadastroVendedores, nomeBuscado);
-				System.out.println(indexProcurado);
+				if(indexProcurado == -1)
+					System.out.println("Vendedor não cadastrado");
+				else
+					System.out.println(cadastroVendedores.get(indexProcurado) + "\n");					
 				break;
 			case 0:
 				System.out.println("\nPrograma encerrado!\n");
