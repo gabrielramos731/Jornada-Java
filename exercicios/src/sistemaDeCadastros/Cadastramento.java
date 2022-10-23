@@ -11,6 +11,17 @@ public class Cadastramento {
 		int opcao, i; int quantVendedores = 0, indexProcurado;
 		String nomeBuscado;
 		
+		String a = "i", b = "i";
+		System.out.println(a.equals(b));
+		
+		Vendedor v1 = new Vendedor();
+		v1.nome="a";
+		v1.cpf="1";
+		Vendedor v2 = new Vendedor();
+		v2.nome="a";
+		v2.cpf="0";
+		System.out.println(v1.equals(v2));
+		
 		Scanner scanf = new Scanner(System.in);
 		List<Vendedor> cadastroVendedores = new ArrayList<>();
 		

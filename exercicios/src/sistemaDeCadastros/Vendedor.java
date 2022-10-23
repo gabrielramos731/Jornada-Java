@@ -39,11 +39,16 @@ public class Vendedor {
 		System.out.println("\n");
 	}
 
+	public boolean equals(Object obj) {
+		Vendedor outro = (Vendedor) obj;
+		return this.nome.equals(outro.nome);
+	}
+	
 	public static int encontrarVendedor(List<Vendedor> cadastroVendedores, String nomeBuscado) {
 		Vendedor obj = new Vendedor();
 		obj.nome = nomeBuscado;
 		for(Vendedor individuo : cadastroVendedores) {
-			if(individuo.nome.equals(obj.nome))
+			if(individuo.equals(obj))
 				return cadastroVendedores.indexOf(individuo);
 		}
 		return -1;
