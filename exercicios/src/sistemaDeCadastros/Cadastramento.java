@@ -38,16 +38,13 @@ public class Cadastramento {
 					System.out.println(individuo.toString() + "\n");
 				break;
 			case 3:
-				Vendedor.calcularComissao(cadastroVendedores);
+				for(Vendedor individuo : cadastroVendedores)
+					System.out.println(individuo.calcularComissao()+"\n");
 				break;
-			case 4:  //nao mostra os repetidos
+			case 4:
 				System.out.println("Nome do vendedor: ");
 				nomeBuscado = scanf.next();
-				indexProcurado = Vendedor.encontrarVendedor(cadastroVendedores, nomeBuscado);
-				if(indexProcurado == -1)
-					System.out.println("Vendedor não cadastrado\n");
-				else
-					System.out.println(cadastroVendedores.get(indexProcurado) + "\n");					
+				Vendedor.encontrarVendedor(cadastroVendedores, nomeBuscado);		
 				break;
 			case 0:
 				System.out.println("\nPrograma encerrado!\n");

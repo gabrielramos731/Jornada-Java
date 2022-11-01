@@ -13,7 +13,7 @@ public class Vendedor {
 	
 	Scanner scanf = new Scanner(System.in);
 
-	void cadastrar() {
+	public void cadastrar() {
 		System.out.println("Nome: ");
 		this.nome = scanf.next();
 		System.out.println("CPF: ");
@@ -30,26 +30,26 @@ public class Vendedor {
 		return "Vendedor [nome=" + nome + ", cpf=" + cpf + ", dataDeNascimento=" + dataDeNascimento + ", salarioBase="
 				+ salarioBase + ", totalVendido=" + totalVendido + "]";
 	}
-
-	public static void calcularComissao(List<Vendedor> cadastroVendedores) {
-		for(Vendedor individuo : cadastroVendedores) {
-			System.out.printf("\n%s: R$%.2f\n", individuo.nome, individuo.totalVendido * 0.03);
-		}
-		System.out.println("\n");
-	}
-
-	public boolean equals(Object obj) {
-		Vendedor outro = (Vendedor) obj;
-		return this.nome.equals(outro.nome);
-	}
 	
-	public static int encontrarVendedor(List<Vendedor> cadastroVendedores, String nomeBuscado) {
+	public String calcularComissao() {
+		return this.nome + ": R$" + this.totalVendido*0.03;
+	}
+
+	public boolean equals(Vendedor obj) {   //equals sobrescrito (compara apenas o nome)
+		return this.nome.equals(obj.nome);
+	}
+
+	public static void encontrarVendedor(List<Vendedor> cadastroVendedores, String nomeBuscado) {
+		int cont = 0;
 		Vendedor obj = new Vendedor();
 		obj.nome = nomeBuscado;
 		for(Vendedor individuo : cadastroVendedores) {
-			if(individuo.equals(obj))
-				return cadastroVendedores.indexOf(individuo);
+			if(individuo.equals(obj)) {
+				System.out.println(individuo.toString() + "\n");
+				cont = 1;
+			}
 		}
-		return -1;
+		if(cont == 0)
+			System.out.println("\nVendedor não cadastrado!\n");
 	}
 }
