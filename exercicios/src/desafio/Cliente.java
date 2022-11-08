@@ -14,10 +14,10 @@ public class Cliente {
 	
 	public double valorTotalCliente(){
 		for(Compra compra : compras) {
-//			total += compra.valorCompra();
-			System.out.println(compra.valorCompra());
+			for(Item item : compra.itens) {
+				total += item.produtoUnico.preco * item.produtoUnico.quantidade;
+			}
 		}
 		return total;
 	}
-	
 }

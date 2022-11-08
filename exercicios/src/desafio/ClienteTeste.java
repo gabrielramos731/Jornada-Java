@@ -21,6 +21,6 @@ public class ClienteTeste {
 		
 		System.out.println(cliente1.compras.get(0).valorCompra());
 		System.out.println(cliente1.compras.get(1).valorCompra());
-		cliente1.valorTotalCliente();
+		System.out.println(cliente1.valorTotalCliente());
 	}
 }
