@@ -4,12 +4,17 @@ import java.util.ArrayList;
 
 public class Compra {
 	
-	double total;
 	ArrayList<Item> itens = new ArrayList<>();
 	
-	public double valorCompra() {
+	public void adicionarItem(String nome, int quantidade, double preco) {
+		itens.add(new Item(nome, new Produto(quantidade, preco)));
+	}
+	
+	public double totalCompra() {
+		double total = 0;
 		for(Item item : itens) {
-			total += item.produtoUnico.quantidade * item.produtoUnico.preco;
+			total += item.produtoUnico.preco * item.produtoUnico.quantidade;
+//			System.out.println("1: "+total);
 		}
 		return total;
 	}

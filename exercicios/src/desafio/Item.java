@@ -1,11 +1,12 @@
 package desafio;
 
 public class Item {
-
-	String nomeProduto;
-	Produto produtoUnico = new Produto();
 	
-	public Item(String nomeProduto) {
-		this.nomeProduto = nomeProduto;
+	String nome;
+	Produto produtoUnico;
+	
+	public Item(String nome, Produto produtoUnico) {
+		this.nome = nome;
+		this.produtoUnico = produtoUnico;
 	}
 }

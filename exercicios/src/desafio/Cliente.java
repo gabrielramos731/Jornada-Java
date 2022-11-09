@@ -5,19 +5,22 @@ import java.util.ArrayList;
 public class Cliente {
 	
 	String nome;
-	double total;
 	ArrayList<Compra> compras = new ArrayList<>();
-
-	public Cliente(String nome){
+	
+	public Cliente(String nome) {
 		this.nome = nome;
 	}
 	
-	public double valorTotalCliente(){
+	public void adicionarCompra() {
+		compras.add(new Compra());
+	}
+	
+	public double totalCliente() {
+		double total = 0;
 		for(Compra compra : compras) {
-			for(Item item : compra.itens) {
-				total += item.produtoUnico.preco * item.produtoUnico.quantidade;
-			}
+			total += compra.totalCompra();
+//			System.out.println("2: "+total);
 		}
-		return total;
+	return total;
 	}
 }
