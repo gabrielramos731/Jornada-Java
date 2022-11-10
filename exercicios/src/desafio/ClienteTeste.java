@@ -15,8 +15,8 @@ public class ClienteTeste {
 		compra2.adicionarItem("Caderno", 2, 15);
 		cliente1.compras.add(compra2);
 		
-		System.out.println(compra1.totalCompra()); 
-		System.out.println(cliente1.totalCliente());  //35
+		System.out.println(compra2.totalCompra()); 
+		System.out.printf("Total: R$%.2f\n\n", cliente1.totalCliente());
 		
 		compra1.mostrarItensCompra();
 		

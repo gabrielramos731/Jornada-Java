@@ -17,8 +17,12 @@ public class Cliente {
 	
 	public double totalCliente() {
 		double total = 0;
-		for(Compra compra : compras)
+		int i = 1;
+		for(Compra compra : compras) {
 			total += compra.totalCompra();
+			System.out.printf("Compra %d: R$%.2f\n", i, compra.totalCompra());
+			i++;
+		}
 	return total;
 	}
 }
