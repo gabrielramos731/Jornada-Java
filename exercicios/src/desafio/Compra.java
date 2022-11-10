@@ -16,4 +16,10 @@ public class Compra {
 			total += item.produtoUnico.preco * item.produtoUnico.quantidade;
 		return total;
 	}
+	
+	public void mostrarItensCompra() {
+		for(Item item : itens) {
+			System.out.printf("%s: %d * %.2f\n", item.nome, item.produtoUnico.quantidade, item.produtoUnico.preco);
+		}
+	}
 }
