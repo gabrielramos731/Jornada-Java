@@ -12,10 +12,8 @@ public class Compra {
 	
 	public double totalCompra() {
 		double total = 0;
-		for(Item item : itens) {
+		for(Item item : itens) 
 			total += item.produtoUnico.preco * item.produtoUnico.quantidade;
-//			System.out.println("1: "+total);
-		}
 		return total;
 	}
 }

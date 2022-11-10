@@ -17,10 +17,8 @@ public class Cliente {
 	
 	public double totalCliente() {
 		double total = 0;
-		for(Compra compra : compras) {
+		for(Compra compra : compras)
 			total += compra.totalCompra();
-//			System.out.println("2: "+total);
-		}
 	return total;
 	}
 }
