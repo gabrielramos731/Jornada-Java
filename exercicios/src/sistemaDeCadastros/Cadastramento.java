@@ -8,7 +8,7 @@ public class Cadastramento {
 	
 	public static void main(String[] args) {
 		
-		int opcao, i; int quantVendedores = 0, indexProcurado;
+		int opcao, i; int quantVendedores = 0;
 		String nomeBuscado;
 		
 		Scanner scanf = new Scanner(System.in);
@@ -16,11 +16,11 @@ public class Cadastramento {
 		
 		do {
 			System.out.println("Digite a opção Desejada:  \r\n"
-					+ "Cadastrar Novos Vendedores (1)\r\n"
-					+ "Mostrar os dados de todos os Vendedores Cadastrados (2)\r\n"
-					+ "calcular comissões (3)\r\n"
-					+ "Mostrar dados de um vendedor específico (4)\r\n"
-					+ "Sair do Programa (0)\n");
+					+ "(1) Cadastrar Novos Vendedores\r\n"
+					+ "(2) Mostrar os dados de todos os Vendedores Cadastrados\r\n"
+					+ "(3) Calcular comissões \r\n"
+					+ "(4) Mostrar dados de um vendedor específico \r\n"
+					+ "(0) Sair do Programa \n");
 			opcao = scanf.nextInt();
 			
 			switch(opcao) {
