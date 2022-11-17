@@ -17,8 +17,8 @@ public class Main {
 		Disciplina sistemasDigitais = new Disciplina("sistemas digitais");
 		materias.add(new Disciplina("oi"));
 		materias.add(icc);
-		materias.get(1).preRequesitos.add(1);
-		System.out.println(icc.preRequesitos.get(0));
+		//fazer um sistema de index simples de cada matéria
+		materias.get(1).preRequesitos.add(1);  //adicionar vários pré-requesitos de uma vez
 		
 	}
 }
