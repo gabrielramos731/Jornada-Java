@@ -26,7 +26,7 @@ public class Disciplina {
 	}
 	
 	void verificar(List<Double> materiasAprovadas) {
-		if(materiasAprovadas.containsAll(preRequesitos) == true)
+		if(materiasAprovadas.containsAll(preRequesitos))
 			System.out.println(nome);
 	}
 }
