@@ -1,24 +1,40 @@
 package disciplinasProjeto;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		ArrayList<Disciplina> materias = new ArrayList<>();
+		List<Disciplina> materias = new ArrayList<>();
+		List<Double> materiasAprovadas = new ArrayList<>();
+		Scanner scanf = new Scanner(System.in);
+		Double aprovado;
 		
-		Disciplina icc = new Disciplina("introdução a ciência da computação");
-		Disciplina gaal = new Disciplina("geomtria analítica e álgebra linear");
-		Disciplina c1 = new Disciplina("cálculo 1");
-		Disciplina ingles1 = new Disciplina("inglês 1");
-		Disciplina algorit = new Disciplina("algoritmos e programação");
-		Disciplina c2 = new Disciplina("cálculo 2");
-		Disciplina sistemasDigitais = new Disciplina("sistemas digitais");
-		materias.add(new Disciplina("oi"));
-		materias.add(icc);
-		//fazer um sistema de index simples de cada matéria
-		materias.get(1).preRequesitos.add(1);  //adicionar vários pré-requesitos de uma vez
+		materias.add(new Disciplina("icc"));
+		materias.add(new Disciplina("gaal"));
+		materias.add(new Disciplina("cálculo 1"));
+		materias.add(new Disciplina("ingles 1"));
+		materias.add(new Disciplina("algoritmos",1.1));
+		materias.add(new Disciplina("cálculo de várias variáveis",1.2));
+		materias.add(new Disciplina("sistemas digitais"));
+		materias.add(new Disciplina("análise numérica", 1.2, 2.1));
 		
+		System.out.println("Digite as materias aprovadas no formato perído,linha. Ex.(1,3)"
+				+ "\n0 quando concluído");
+		while(true) {
+			aprovado = scanf.nextDouble();
+			materiasAprovadas.add(aprovado);
+			if(aprovado == 0)
+				break;
+		}
+		
+		System.out.println("Matérias disponíveis: ");
+		for(Disciplina materia : materias) {
+			materia.verificar(materiasAprovadas);
+		}
+		scanf.close();
 	}
 }
